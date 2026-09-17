@@ -1,13 +1,33 @@
 <!DOCTYPE html>
-<html lang="ko">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-<meta name="theme-color" content="#1a1230">
-<title>
+<html
+lang
+="ko"
+>
+<head
+>
+<meta
+charset
+="UTF-8"
+>
+<meta
+name
+="viewport"
+content
+="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+>
+<meta
+name
+="theme-color"
+content
+="#1a1230"
+>
+<title
+>
 🐣 뽀뽀 다마고치 — 2.5D
-</title>
-<style>
+</title
+>
+<style
+>
 /* ============================================================
 RESET & TOKENS ============================================================ */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
@@ -1229,370 +1249,1750 @@ animation-iteration-count: 1 !important;
 transition-duration: .01ms !important;
 }
 }
-</style>
-</head>
-<body>
-<div class="app">
-<div class="device" id="device">
-<button class="sound-toggle" id="soundToggle" aria-label="소리 켜기/끄기">
+</style
+>
+</head
+>
+<body
+>
+<div
+class
+="app"
+>
+<div
+class
+="device"
+id
+="device"
+>
+<button
+class
+="sound-toggle"
+id
+="soundToggle"
+aria-label
+="소리 켜기/끄기"
+>
 🔊
-</button>
+</button
+>
 <!-- ================= HUD ================= -->
-<div class="hud">
-<div class="hud-row">
-<div class="name-chip" id="nameChip" role="button" tabindex="0" aria-label="펫 이름 바꾸기">
-<span class="dot">
-</span>
-<span class="name-text" id="nameText">
+<div
+class
+="hud"
+>
+<div
+class
+="hud-row"
+>
+<div
+class
+="name-chip"
+id
+="nameChip"
+role
+="button"
+tabindex
+="0"
+aria-label
+="펫 이름 바꾸기"
+>
+<span
+class
+="dot"
+>
+</span
+>
+<span
+class
+="name-text"
+id
+="nameText"
+>
 🥚 뽀뽀
-</span>
-</div>
-<div style=" display:flex; align-items:center; gap:8px; ">
-<span class="meta hp" id="hpText">
+</span
+>
+</div
+>
+<div
+style
+="
+display:flex; align-items:center; gap:8px;
+\"
+>
+<span
+class
+="meta hp"
+id
+="hpText"
+>
 ❤️ 100
-</span>
-<span class="stage-badge" id="stageBadge">
+</span
+>
+<span
+class
+="stage-badge"
+id
+="stageBadge"
+>
 알
-</span>
-</div>
-</div>
-<div class="hud-row">
-<div class="meta age" id="ageText">
+</span
+>
+</div
+>
+</div
+>
+<div
+class
+="hud-row"
+>
+<div
+class
+="meta age"
+id
+="ageText"
+>
 ⏱ 0초
-</div>
-<div class="meta" style=" color:rgba(255,255,255,.4); font-size:10px; " id="moodText">
+</div
+>
+<div
+class
+="meta"
+style
+="
+color:rgba(255,255,255,.4); font-size:10px;
+\"
+id
+="moodText"
+>
 기분 좋음
-</div>
-</div>
-</div>
+</div
+>
+</div
+>
+</div
+>
 <!-- ================= STATS ================= -->
-<div class="stats" id="stats">
-<div class="stat" data-stat="fullness">
-<div class="stat-ring">
-<svg viewBox="0 0 46 46">
-<circle class="trk" cx="23" cy="23" r="19" />
-<circle class="val" cx="23" cy="23" r="19" id="r-fullness" style=" stroke:#ff9f43; color:#ff9f43; " />
-</svg>
-<div class="icon">
+<div
+class
+="stats"
+id
+="stats"
+>
+<div
+class
+="stat"
+data-stat
+="fullness"
+>
+<div
+class
+="stat-ring"
+>
+<svg
+viewBox
+="0 0 46 46"
+>
+<circle
+class
+="trk"
+cx
+="23"
+cy
+="23"
+r
+="19"
+/>
+<circle
+class
+="val"
+cx
+="23"
+cy
+="23"
+r
+="19"
+id
+="r-fullness"
+style
+="
+stroke:#ff9f43; color:#ff9f43;
+\"
+/>
+</svg
+>
+<div
+class
+="icon"
+>
 🍚
-</div>
-</div>
-<div class="stat-label">
+</div
+>
+</div
+>
+<div
+class
+="stat-label"
+>
 밥
-</div>
-</div>
-<div class="stat" data-stat="happiness">
-<div class="stat-ring">
-<svg viewBox="0 0 46 46">
-<circle class="trk" cx="23" cy="23" r="19" />
-<circle class="val" cx="23" cy="23" r="19" id="r-happiness" style=" stroke:#ff5c9a; color:#ff5c9a; " />
-</svg>
-<div class="icon">
+</div
+>
+</div
+>
+<div
+class
+="stat"
+data-stat
+="happiness"
+>
+<div
+class
+="stat-ring"
+>
+<svg
+viewBox
+="0 0 46 46"
+>
+<circle
+class
+="trk"
+cx
+="23"
+cy
+="23"
+r
+="19"
+/>
+<circle
+class
+="val"
+cx
+="23"
+cy
+="23"
+r
+="19"
+id
+="r-happiness"
+style
+="
+stroke:#ff5c9a; color:#ff5c9a;
+\"
+/>
+</svg
+>
+<div
+class
+="icon"
+>
 😊
-</div>
-</div>
-<div class="stat-label">
+</div
+>
+</div
+>
+<div
+class
+="stat-label"
+>
 행복
-</div>
-</div>
-<div class="stat" data-stat="clean">
-<div class="stat-ring">
-<svg viewBox="0 0 46 46">
-<circle class="trk" cx="23" cy="23" r="19" />
-<circle class="val" cx="23" cy="23" r="19" id="r-clean" style=" stroke:#28b8f5; color:#28b8f5; " />
-</svg>
-<div class="icon">
+</div
+>
+</div
+>
+<div
+class
+="stat"
+data-stat
+="clean"
+>
+<div
+class
+="stat-ring"
+>
+<svg
+viewBox
+="0 0 46 46"
+>
+<circle
+class
+="trk"
+cx
+="23"
+cy
+="23"
+r
+="19"
+/>
+<circle
+class
+="val"
+cx
+="23"
+cy
+="23"
+r
+="19"
+id
+="r-clean"
+style
+="
+stroke:#28b8f5; color:#28b8f5;
+\"
+/>
+</svg
+>
+<div
+class
+="icon"
+>
 🫧
-</div>
-</div>
-<div class="stat-label">
+</div
+>
+</div
+>
+<div
+class
+="stat-label"
+>
 청결
-</div>
-</div>
-<div class="stat" data-stat="energy">
-<div class="stat-ring">
-<svg viewBox="0 0 46 46">
-<circle class="trk" cx="23" cy="23" r="19" />
-<circle class="val" cx="23" cy="23" r="19" id="r-energy" style=" stroke:#8c6bff; color:#8c6bff; " />
-</svg>
-<div class="icon">
+</div
+>
+</div
+>
+<div
+class
+="stat"
+data-stat
+="energy"
+>
+<div
+class
+="stat-ring"
+>
+<svg
+viewBox
+="0 0 46 46"
+>
+<circle
+class
+="trk"
+cx
+="23"
+cy
+="23"
+r
+="19"
+/>
+<circle
+class
+="val"
+cx
+="23"
+cy
+="23"
+r
+="19"
+id
+="r-energy"
+style
+="
+stroke:#8c6bff; color:#8c6bff;
+\"
+/>
+</svg
+>
+<div
+class
+="icon"
+>
 ⚡
-</div>
-</div>
-<div class="stat-label">
+</div
+>
+</div
+>
+<div
+class
+="stat-label"
+>
 기력
-</div>
-</div>
-</div>
+</div
+>
+</div
+>
+</div
+>
 <!-- ================= STAGE ================= -->
-<div class="stage" id="stage">
-<div class="sky">
-</div>
-<div class="aurora">
-</div>
-<div class="stars" id="stars">
-</div>
-<div class="celestial">
-<div class="sun-rays">
-</div>
-<div class="orb">
-</div>
-</div>
-<div class="layer" data-parallax="0.15">
-<div class="mountain-far">
-</div>
-</div>
-<div class="layer" data-parallax="0.28">
-<div class="mountain-near">
-</div>
-</div>
-<div class="layer" data-parallax="0.42">
-<div class="cloud a">
-</div>
-<div class="cloud b">
-</div>
-</div>
-<div class="layer" data-parallax="0.60">
-<div class="cloud c">
-</div>
-</div>
-<div class="ground">
-</div>
-<div class="decor" id="decor">
-</div>
-<div class="floor-shadow" id="floorShadow">
-</div>
-<div class="pet-wrap" id="petWrap">
-<div class="pet-tilt" id="petTilt">
-<div class="pet-aura">
-</div>
+<div
+class
+="stage"
+id
+="stage"
+>
+<div
+class
+="sky"
+>
+</div
+>
+<div
+class
+="aurora"
+>
+</div
+>
+<div
+class
+="stars"
+id
+="stars"
+>
+</div
+>
+<div
+class
+="celestial"
+>
+<div
+class
+="sun-rays"
+>
+</div
+>
+<div
+class
+="orb"
+>
+</div
+>
+</div
+>
+<div
+class
+="layer"
+data-parallax
+="0.15"
+>
+<div
+class
+="mountain-far"
+>
+</div
+>
+</div
+>
+<div
+class
+="layer"
+data-parallax
+="0.28"
+>
+<div
+class
+="mountain-near"
+>
+</div
+>
+</div
+>
+<div
+class
+="layer"
+data-parallax
+="0.42"
+>
+<div
+class
+="cloud a"
+>
+</div
+>
+<div
+class
+="cloud b"
+>
+</div
+>
+</div
+>
+<div
+class
+="layer"
+data-parallax
+="0.60"
+>
+<div
+class
+="cloud c"
+>
+</div
+>
+</div
+>
+<div
+class
+="ground"
+>
+</div
+>
+<div
+class
+="decor"
+id
+="decor"
+>
+</div
+>
+<div
+class
+="floor-shadow"
+id
+="floorShadow"
+>
+</div
+>
+<div
+class
+="pet-wrap"
+id
+="petWrap"
+>
+<div
+class
+="pet-tilt"
+id
+="petTilt"
+>
+<div
+class
+="pet-aura"
+>
+</div
+>
 <!-- EGG -->
-<svg class="egg-svg" id="eggSvg" viewBox="0 0 120 130" aria-hidden="true">
-<defs>
-<radialGradient id="gEggBody" cx="34%" cy="26%" r="82%">
-<stop offset="0%" stop-color="#ffffff" />
-<stop offset="45%" stop-color="#fdf6ea" />
-<stop offset="82%" stop-color="#f2e2cb" />
-<stop offset="100%" stop-color="#dcc4a4" />
-</radialGradient>
-<radialGradient id="gEggHL" cx="50%" cy="50%" r="50%">
-<stop offset="0%" stop-color="#fff" stop-opacity=".95" />
-<stop offset="100%" stop-color="#fff" stop-opacity="0" />
-</radialGradient>
-<linearGradient id="gEggRim" x1="0%" y1="0%" x2="100%" y2="100%">
-<stop offset="0%" stop-color="#fff" stop-opacity=".0" />
-<stop offset="60%" stop-color="#ffe3c4" stop-opacity=".0" />
-<stop offset="100%" stop-color="#c79a68" stop-opacity=".35" />
-</linearGradient>
-</defs>
+<svg
+class
+="egg-svg"
+id
+="eggSvg"
+viewBox
+="0 0 120 130"
+aria-hidden
+="true"
+>
+<defs
+>
+<radialGradient
+id
+="gEggBody"
+cx
+="34%"
+cy
+="26%"
+r
+="82%"
+>
+<stop
+offset
+="0%"
+stop-color
+="#ffffff"
+/>
+<stop
+offset
+="45%"
+stop-color
+="#fdf6ea"
+/>
+<stop
+offset
+="82%"
+stop-color
+="#f2e2cb"
+/>
+<stop
+offset
+="100%"
+stop-color
+="#dcc4a4"
+/>
+</radialGradient
+>
+<radialGradient
+id
+="gEggHL"
+cx
+="50%"
+cy
+="50%"
+r
+="50%"
+>
+<stop
+offset
+="0%"
+stop-color
+="#fff"
+stop-opacity
+=".95"
+/>
+<stop
+offset
+="100%"
+stop-color
+="#fff"
+stop-opacity
+="0"
+/>
+</radialGradient
+>
+<linearGradient
+id
+="gEggRim"
+x1
+="0%"
+y1
+="0%"
+x2
+="100%"
+y2
+="100%"
+>
+<stop
+offset
+="0%"
+stop-color
+="#fff"
+stop-opacity
+=".0"
+/>
+<stop
+offset
+="60%"
+stop-color
+="#ffe3c4"
+stop-opacity
+=".0"
+/>
+<stop
+offset
+="100%"
+stop-color
+="#c79a68"
+stop-opacity
+=".35"
+/>
+</linearGradient
+>
+</defs
+>
 <!-- shadow -->
-<ellipse cx="60" cy="121" rx="30" ry="6" fill="#000" opacity=".22" />
+<ellipse
+cx
+="60"
+cy
+="121"
+rx
+="30"
+ry
+="6"
+fill
+="#000"
+opacity
+=".22"
+/>
 <!-- body -->
-<path d="M60 8 C86 8 102 46 102 72 C102 100 82 116 60 116 C38 116 18 100 18 72 C18 46 34 8 60 8 Z" fill="url(#gEggBody)" />
+<path
+d
+="M60 8
+C86 8 102 46 102 72 C102 100 82 116 60 116 C38 116 18 100 18 72
+C18 46 34 8 60 8 Z"
+fill
+="url(#gEggBody)"
+/>
 <!-- spots -->
-<ellipse cx="42" cy="48" rx="8.5" ry="10.5" fill="#ffe3c4" opacity=".9" />
-<ellipse cx="78" cy="66" rx="7" ry="9" fill="#ffe3c4" opacity=".9" />
-<ellipse cx="55" cy="90" rx="10" ry="7" fill="#ffe3c4" opacity=".8" />
-<ellipse cx="80" cy="34" rx="4.5" ry="5.5" fill="#ffe3c4" opacity=".75" />
-<ellipse cx="34" cy="78" rx="5" ry="4" fill="#ffe3c4" opacity=".7" />
+<ellipse
+cx
+="42"
+cy
+="48"
+rx
+="8.5"
+ry
+="10.5"
+fill
+="#ffe3c4"
+opacity
+=".9"
+/>
+<ellipse
+cx
+="78"
+cy
+="66"
+rx
+="7"
+ry
+="9"
+fill
+="#ffe3c4"
+opacity
+=".9"
+/>
+<ellipse
+cx
+="55"
+cy
+="90"
+rx
+="10"
+ry
+="7"
+fill
+="#ffe3c4"
+opacity
+=".8"
+/>
+<ellipse
+cx
+="80"
+cy
+="34"
+rx
+="4.5"
+ry
+="5.5"
+fill
+="#ffe3c4"
+opacity
+=".75"
+/>
+<ellipse
+cx
+="34"
+cy
+="78"
+rx
+="5"
+ry
+="4"
+fill
+="#ffe3c4"
+opacity
+=".7"
+/>
 <!-- specular highlight -->
-<ellipse cx="42" cy="34" rx="14" ry="18" fill="url(#gEggHL)" opacity=".75" transform="rotate(-22 42 34)" />
+<ellipse
+cx
+="42"
+cy
+="34"
+rx
+="14"
+ry
+="18"
+fill
+="url(#gEggHL)"
+opacity
+=".75"
+transform
+="rotate(-22 42 34)"
+/>
 <!-- rim / occlusion -->
-<path d="M60 8 C86 8 102 46 102 72 C102 100 82 116 60 116 C38 116 18 100 18 72 C18 46 34 8 60 8 Z" fill="url(#gEggRim)" />
+<path
+d
+="M60 8
+C86 8 102 46 102 72 C102 100 82 116 60 116 C38 116 18 100 18 72
+C18 46 34 8 60 8 Z"
+fill
+="url(#gEggRim)"
+/>
 <!-- crack hint -->
-<path d="M52 30 L58 38 L52 44 L60 50 L54 58" fill="none" stroke="#c9a878" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" opacity=".55" />
-</svg>
+<path
+d
+="M52 30 L58 38 L52 44 L60 50 L54 58"
+fill
+="none"
+stroke
+="#c9a878"
+stroke-width
+="1.6"
+stroke-linecap
+="round"
+stroke-linejoin
+="round"
+opacity
+=".55"
+/>
+</svg
+>
 <!-- PET -->
-<svg class="pet-svg" id="petSvg" viewBox="0 0 120 130" style=" display:none " aria-hidden="true">
-<defs>
-<radialGradient id="gBody" cx="34%" cy="24%" r="88%">
-<stop offset="0%" stop-color="#ffffff" />
-<stop offset="28%" stop-color="#ffe2ef" />
-<stop offset="62%" stop-color="#ffb5d4" />
-<stop offset="88%" stop-color="#ff86b8" />
-<stop offset="100%" stop-color="#e85c98" />
-</radialGradient>
-<radialGradient id="gBodyNight" cx="34%" cy="24%" r="88%">
-<stop offset="0%" stop-color="#ffffff" />
-<stop offset="30%" stop-color="#dcd6ff" />
-<stop offset="65%" stop-color="#a89bff" />
-<stop offset="100%" stop-color="#6d5cd6" />
-</radialGradient>
-<radialGradient id="gShadow" cx="50%" cy="50%" r="50%">
-<stop offset="0%" stop-color="#b83d78" stop-opacity=".45" />
-<stop offset="100%" stop-color="#b83d78" stop-opacity="0" />
-</radialGradient>
-<radialGradient id="gHL" cx="50%" cy="50%" r="50%">
-<stop offset="0%" stop-color="#fff" stop-opacity=".95" />
-<stop offset="100%" stop-color="#fff" stop-opacity="0" />
-</radialGradient>
-<radialGradient id="gBlush" cx="50%" cy="50%" r="50%">
-<stop offset="0%" stop-color="#ff5c9a" stop-opacity=".65" />
-<stop offset="100%" stop-color="#ff5c9a" stop-opacity="0" />
-</radialGradient>
-<linearGradient id="gRim" x1="0%" y1="0%" x2="100%" y2="100%">
-<stop offset="0%" stop-color="#fff" stop-opacity=".85" />
-<stop offset="35%" stop-color="#fff" stop-opacity="0" />
-<stop offset="100%" stop-color="#8a2355" stop-opacity=".45" />
-</linearGradient>
-<radialGradient id="gIris" cx="50%" cy="50%" r="50%">
-<stop offset="0%" stop-color="#5c3f7a" />
-<stop offset="60%" stop-color="#2e1d43" />
-<stop offset="100%" stop-color="#140a22" />
-</radialGradient>
-</defs>
-<ellipse cx="60" cy="122" rx="36" ry="6" fill="#000" opacity=".18" />
-<g id="petBodyGroup">
+<svg
+class
+="pet-svg"
+id
+="petSvg"
+viewBox
+="0 0 120 130"
+style
+="
+display:none
+\"
+aria-hidden
+="true"
+>
+<defs
+>
+<radialGradient
+id
+="gBody"
+cx
+="34%"
+cy
+="24%"
+r
+="88%"
+>
+<stop
+offset
+="0%"
+stop-color
+="#ffffff"
+/>
+<stop
+offset
+="28%"
+stop-color
+="#ffe2ef"
+/>
+<stop
+offset
+="62%"
+stop-color
+="#ffb5d4"
+/>
+<stop
+offset
+="88%"
+stop-color
+="#ff86b8"
+/>
+<stop
+offset
+="100%"
+stop-color
+="#e85c98"
+/>
+</radialGradient
+>
+<radialGradient
+id
+="gBodyNight"
+cx
+="34%"
+cy
+="24%"
+r
+="88%"
+>
+<stop
+offset
+="0%"
+stop-color
+="#ffffff"
+/>
+<stop
+offset
+="30%"
+stop-color
+="#dcd6ff"
+/>
+<stop
+offset
+="65%"
+stop-color
+="#a89bff"
+/>
+<stop
+offset
+="100%"
+stop-color
+="#6d5cd6"
+/>
+</radialGradient
+>
+<radialGradient
+id
+="gShadow"
+cx
+="50%"
+cy
+="50%"
+r
+="50%"
+>
+<stop
+offset
+="0%"
+stop-color
+="#b83d78"
+stop-opacity
+=".45"
+/>
+<stop
+offset
+="100%"
+stop-color
+="#b83d78"
+stop-opacity
+="0"
+/>
+</radialGradient
+>
+<radialGradient
+id
+="gHL"
+cx
+="50%"
+cy
+="50%"
+r
+="50%"
+>
+<stop
+offset
+="0%"
+stop-color
+="#fff"
+stop-opacity
+=".95"
+/>
+<stop
+offset
+="100%"
+stop-color
+="#fff"
+stop-opacity
+="0"
+/>
+</radialGradient
+>
+<radialGradient
+id
+="gBlush"
+cx
+="50%"
+cy
+="50%"
+r
+="50%"
+>
+<stop
+offset
+="0%"
+stop-color
+="#ff5c9a"
+stop-opacity
+=".65"
+/>
+<stop
+offset
+="100%"
+stop-color
+="#ff5c9a"
+stop-opacity
+="0"
+/>
+</radialGradient
+>
+<linearGradient
+id
+="gRim"
+x1
+="0%"
+y1
+="0%"
+x2
+="100%"
+y2
+="100%"
+>
+<stop
+offset
+="0%"
+stop-color
+="#fff"
+stop-opacity
+=".85"
+/>
+<stop
+offset
+="35%"
+stop-color
+="#fff"
+stop-opacity
+="0"
+/>
+<stop
+offset
+="100%"
+stop-color
+="#8a2355"
+stop-opacity
+=".45"
+/>
+</linearGradient
+>
+<radialGradient
+id
+="gIris"
+cx
+="50%"
+cy
+="50%"
+r
+="50%"
+>
+<stop
+offset
+="0%"
+stop-color
+="#5c3f7a"
+/>
+<stop
+offset
+="60%"
+stop-color
+="#2e1d43"
+/>
+<stop
+offset
+="100%"
+stop-color
+="#140a22"
+/>
+</radialGradient
+>
+</defs
+>
+<ellipse
+cx
+="60"
+cy
+="122"
+rx
+="36"
+ry
+="6"
+fill
+="#000"
+opacity
+=".18"
+/>
+<g
+id
+="petBodyGroup"
+>
 <!-- feet -->
-<ellipse cx="42" cy="112" rx="12" ry="8" fill="url(#gBody)" />
-<ellipse cx="78" cy="112" rx="12" ry="8" fill="url(#gBody)" />
-<ellipse cx="42" cy="113" rx="9" ry="5" fill="url(#gShadow)" />
-<ellipse cx="78" cy="113" rx="9" ry="5" fill="url(#gShadow)" />
+<ellipse
+cx
+="42"
+cy
+="112"
+rx
+="12"
+ry
+="8"
+fill
+="url(#gBody)"
+/>
+<ellipse
+cx
+="78"
+cy
+="112"
+rx
+="12"
+ry
+="8"
+fill
+="url(#gBody)"
+/>
+<ellipse
+cx
+="42"
+cy
+="113"
+rx
+="9"
+ry
+="5"
+fill
+="url(#gShadow)"
+/>
+<ellipse
+cx
+="78"
+cy
+="113"
+rx
+="9"
+ry
+="5"
+fill
+="url(#gShadow)"
+/>
 <!-- arms -->
-<ellipse cx="22" cy="76" rx="8.5" ry="12.5" fill="url(#gBody)" transform="rotate(-24 22 76)" id="armL" />
-<ellipse cx="98" cy="76" rx="8.5" ry="12.5" fill="url(#gBody)" transform="rotate(24 98 76)" id="armR" />
+<ellipse
+cx
+="22"
+cy
+="76"
+rx
+="8.5"
+ry
+="12.5"
+fill
+="url(#gBody)"
+transform
+="rotate(-24 22 76)"
+id
+="armL"
+/>
+<ellipse
+cx
+="98"
+cy
+="76"
+rx
+="8.5"
+ry
+="12.5"
+fill
+="url(#gBody)"
+transform
+="rotate(24 98 76)"
+id
+="armR"
+/>
 <!-- body -->
-<ellipse cx="60" cy="68" rx="40" ry="38" fill="url(#gBody)" />
+<ellipse
+cx
+="60"
+cy
+="68"
+rx
+="40"
+ry
+="38"
+fill
+="url(#gBody)"
+/>
 <!-- body inner shadow (bottom) -->
-<ellipse cx="60" cy="95" rx="32" ry="14" fill="url(#gShadow)" />
+<ellipse
+cx
+="60"
+cy
+="95"
+rx
+="32"
+ry
+="14"
+fill
+="url(#gShadow)"
+/>
 <!-- blush -->
-<ellipse cx="30" cy="76" rx="9" ry="6" fill="url(#gBlush)" />
-<ellipse cx="90" cy="76" rx="9" ry="6" fill="url(#gBlush)" />
+<ellipse
+cx
+="30"
+cy
+="76"
+rx
+="9"
+ry
+="6"
+fill
+="url(#gBlush)"
+/>
+<ellipse
+cx
+="90"
+cy
+="76"
+rx
+="9"
+ry
+="6"
+fill
+="url(#gBlush)"
+/>
 <!-- eyes -->
-<g id="eyesOpen">
+<g
+id
+="eyesOpen"
+>
 <!-- eye sockets shadow -->
-<ellipse cx="45" cy="60" rx="9" ry="11" fill="#000" opacity=".07" />
-<ellipse cx="75" cy="60" rx="9" ry="11" fill="#000" opacity=".07" />
+<ellipse
+cx
+="45"
+cy
+="60"
+rx
+="9"
+ry
+="11"
+fill
+="#000"
+opacity
+=".07"
+/>
+<ellipse
+cx
+="75"
+cy
+="60"
+rx
+="9"
+ry
+="11"
+fill
+="#000"
+opacity
+=".07"
+/>
 <!-- whites -->
-<ellipse cx="45" cy="60" rx="7.5" ry="9.5" fill="#fff" />
-<ellipse cx="75" cy="60" rx="7.5" ry="9.5" fill="#fff" />
+<ellipse
+cx
+="45"
+cy
+="60"
+rx
+="7.5"
+ry
+="9.5"
+fill
+="#fff"
+/>
+<ellipse
+cx
+="75"
+cy
+="60"
+rx
+="7.5"
+ry
+="9.5"
+fill
+="#fff"
+/>
 <!-- iris -->
-<ellipse cx="46" cy="60.5" rx="6" ry="8" fill="url(#gIris)" />
-<ellipse cx="76" cy="60.5" rx="6" ry="8" fill="url(#gIris)" />
+<ellipse
+cx
+="46"
+cy
+="60.5"
+rx
+="6"
+ry
+="8"
+fill
+="url(#gIris)"
+/>
+<ellipse
+cx
+="76"
+cy
+="60.5"
+rx
+="6"
+ry
+="8"
+fill
+="url(#gIris)"
+/>
 <!-- glints -->
-<circle cx="43.5" cy="57" r="2.6" fill="#fff" />
-<circle cx="73.5" cy="57" r="2.6" fill="#fff" />
-<circle cx="47.5" cy="63.5" r="1.2" fill="#fff" opacity=".8" />
-<circle cx="77.5" cy="63.5" r="1.2" fill="#fff" opacity=".8" />
-</g>
-<g id="eyesClosed" style=" display:none ">
-<path d="M37 61 Q45 51 53 61" fill="none" stroke="#3a2547" stroke-width="3.6" stroke-linecap="round" />
-<path d="M67 61 Q75 51 83 61" fill="none" stroke="#3a2547" stroke-width="3.6" stroke-linecap="round" />
-</g>
-<g id="eyesX" style=" display:none ">
-<path d="M40 54 L50 65 M50 54 L40 65" stroke="#3a2547" stroke-width="3.4" stroke-linecap="round" />
-<path d="M70 54 L80 65 M80 54 L70 65" stroke="#3a2547" stroke-width="3.4" stroke-linecap="round" />
-</g>
+<circle
+cx
+="43.5"
+cy
+="57"
+r
+="2.6"
+fill
+="#fff"
+/>
+<circle
+cx
+="73.5"
+cy
+="57"
+r
+="2.6"
+fill
+="#fff"
+/>
+<circle
+cx
+="47.5"
+cy
+="63.5"
+r
+="1.2"
+fill
+="#fff"
+opacity
+=".8"
+/>
+<circle
+cx
+="77.5"
+cy
+="63.5"
+r
+="1.2"
+fill
+="#fff"
+opacity
+=".8"
+/>
+</g
+>
+<g
+id
+="eyesClosed"
+style
+="
+display:none
+\"
+>
+<path
+d
+="M37 61 Q45 51 53 61"
+fill
+="none"
+stroke
+="#3a2547"
+stroke-width
+="3.6"
+stroke-linecap
+="round"
+/>
+<path
+d
+="M67 61 Q75 51 83 61"
+fill
+="none"
+stroke
+="#3a2547"
+stroke-width
+="3.6"
+stroke-linecap
+="round"
+/>
+</g
+>
+<g
+id
+="eyesX"
+style
+="
+display:none
+\"
+>
+<path
+d
+="M40 54 L50 65 M50 54 L40 65"
+stroke
+="#3a2547"
+stroke-width
+="3.4"
+stroke-linecap
+="round"
+/>
+<path
+d
+="M70 54 L80 65 M80 54 L70 65"
+stroke
+="#3a2547"
+stroke-width
+="3.4"
+stroke-linecap
+="round"
+/>
+</g
+>
 <!-- mouth -->
-<path id="mouthPath" d="M50 78 Q60 90 70 78" fill="none" stroke="#3a2547" stroke-width="3.2" stroke-linecap="round" />
-<ellipse id="mouthOpen" cx="60" cy="83" rx="6" ry="7" fill="#4a2540" style=" display:none " />
-<ellipse id="mouthTongue" cx="60" cy="87" rx="3.5" ry="2.5" fill="#ff7aa8" style=" display:none " />
+<path
+id
+="mouthPath"
+d
+="M50 78 Q60 90 70 78"
+fill
+="none"
+stroke
+="#3a2547"
+stroke-width
+="3.2"
+stroke-linecap
+="round"
+/>
+<ellipse
+id
+="mouthOpen"
+cx
+="60"
+cy
+="83"
+rx
+="6"
+ry
+="7"
+fill
+="#4a2540"
+style
+="
+display:none
+\"
+/>
+<ellipse
+id
+="mouthTongue"
+cx
+="60"
+cy
+="87"
+rx
+="3.5"
+ry
+="2.5"
+fill
+="#ff7aa8"
+style
+="
+display:none
+\"
+/>
 <!-- rim light overlay -->
-<ellipse cx="60" cy="68" rx="40" ry="38" fill="url(#gRim)" />
+<ellipse
+cx
+="60"
+cy
+="68"
+rx
+="40"
+ry
+="38"
+fill
+="url(#gRim)"
+/>
 <!-- top specular highlight -->
-<ellipse cx="42" cy="42" rx="14" ry="10" fill="url(#gHL)" opacity=".85" transform="rotate(-30 42 42)" />
-<ellipse cx="80" cy="50" rx="5" ry="3.5" fill="url(#gHL)" opacity=".55" transform="rotate(20 80 50)" />
-</g>
-</svg>
-</div>
-</div>
-<div class="poops" id="poops">
-</div>
-<div class="zzz-layer" id="zzzLayer">
-<div class="z">
+<ellipse
+cx
+="42"
+cy
+="42"
+rx
+="14"
+ry
+="10"
+fill
+="url(#gHL)"
+opacity
+=".85"
+transform
+="rotate(-30 42 42)"
+/>
+<ellipse
+cx
+="80"
+cy
+="50"
+rx
+="5"
+ry
+="3.5"
+fill
+="url(#gHL)"
+opacity
+=".55"
+transform
+="rotate(20 80 50)"
+/>
+</g
+>
+</svg
+>
+</div
+>
+</div
+>
+<div
+class
+="poops"
+id
+="poops"
+>
+</div
+>
+<div
+class
+="zzz-layer"
+id
+="zzzLayer"
+>
+<div
+class
+="z"
+>
 Z
-</div>
-<div class="z">
+</div
+>
+<div
+class
+="z"
+>
 Z
-</div>
-<div class="z">
+</div
+>
+<div
+class
+="z"
+>
 Z
-</div>
-</div>
-<div class="bubble" id="bubble">
-</div>
-<div class="particles" id="particles">
-</div>
-<div class="flash" id="flash">
-</div>
-<div class="vignette">
-</div>
-<div class="bloom">
-</div>
+</div
+>
+</div
+>
+<div
+class
+="bubble"
+id
+="bubble"
+>
+</div
+>
+<div
+class
+="particles"
+id
+="particles"
+>
+</div
+>
+<div
+class
+="flash"
+id
+="flash"
+>
+</div
+>
+<div
+class
+="vignette"
+>
+</div
+>
+<div
+class
+="bloom"
+>
+</div
+>
 <!-- ================= OVERLAY ================= -->
-<div class="overlay" id="overlay">
-<div class="ghost" id="overGhost">
+<div
+class
+="overlay"
+id
+="overlay"
+>
+<div
+class
+="ghost"
+id
+="overGhost"
+>
 👻
-</div>
-<h2 id="overTitle">
+</div
+>
+<h2
+id
+="overTitle"
+>
 뽀뽀는 하늘로 갔어요...
-</h2>
-<p id="overDesc">
+</h2
+>
+<p
+id
+="overDesc"
+>
 정말 잘 키워줬어요.
-<br>
+<br
+>
 다음 생에는 더 오래 함께해요 💫
-</p>
-<button class="restart-btn" id="restartBtn">
+</p
+>
+<button
+class
+="restart-btn"
+id
+="restartBtn"
+>
 새로 시작하기 🥚
-</button>
-</div>
-</div>
+</button
+>
+</div
+>
+</div
+>
 <!-- ================= ACTIONS ================= -->
-<div class="actions">
-<div class="actions-row">
-<button class="btn feed" id="btnFeed" aria-label="밥주기">
-<span class="emoji">
+<div
+class
+="actions"
+>
+<div
+class
+="actions-row"
+>
+<button
+class
+="btn feed"
+id
+="btnFeed"
+aria-label
+="밥주기"
+>
+<span
+class
+="emoji"
+>
 🍚
-</span>
+</span
+>
 밥주기
-</button>
-<button class="btn play" id="btnPlay" aria-label="놀아주기">
-<span class="emoji">
+</button
+>
+<button
+class
+="btn play"
+id
+="btnPlay"
+aria-label
+="놀아주기"
+>
+<span
+class
+="emoji"
+>
 🎾
-</span>
+</span
+>
 놀아주기
-</button>
-<button class="btn wash" id="btnWash" aria-label="씻기기">
-<span class="emoji">
+</button
+>
+<button
+class
+="btn wash"
+id
+="btnWash"
+aria-label
+="씻기기"
+>
+<span
+class
+="emoji"
+>
 🛁
-</span>
+</span
+>
 씻기기
-</button>
-<button class="btn sleep" id="btnSleep" aria-label="재우기">
-<span class="emoji">
+</button
+>
+<button
+class
+="btn sleep"
+id
+="btnSleep"
+aria-label
+="재우기"
+>
+<span
+class
+="emoji"
+>
 💤
-</span>
+</span
+>
 재우기
-</button>
-</div>
-<div class="actions-row med" id="medRow" style=" display:none; ">
-<button class="btn med" id="btnMed" aria-label="약 먹이기">
-<span class="emoji">
+</button
+>
+</div
+>
+<div
+class
+="actions-row med"
+id
+="medRow"
+style
+="
+display:none;
+\"
+>
+<button
+class
+="btn med"
+id
+="btnMed"
+aria-label
+="약 먹이기"
+>
+<span
+class
+="emoji"
+>
 💊
-</span>
+</span
+>
 약 먹이기
-</button>
-</div>
-</div>
-<div class="hint">
+</button
+>
+</div
+>
+</div
+>
+<div
+class
+="hint"
+>
 💡 펫을 콕 눌러보세요 · 이름을 눌러 변경 ·
-<kbd>
+<kbd
+>
 1
-</kbd>
-<kbd>
+</kbd
+>
+<kbd
+>
 2
-</kbd>
-<kbd>
+</kbd
+>
+<kbd
+>
 3
-</kbd>
-<kbd>
+</kbd
+>
+<kbd
+>
 4
-</kbd>
+</kbd
+>
 단축키
-</div>
-</div>
-</div>
-<script>
+</div
+>
+</div
+>
+</div
+>
+<script
+>
 (() => {
 'use strict';
 /* ========================================================
@@ -1662,10 +3062,10 @@ clean: $('r-clean'),
 energy: $('r-energy')
 };
 const statEls = {
-fullness: document.querySelector('[data-stat="fullness"]'),
-happiness: document.querySelector('[data-stat="happiness"]'),
-clean: document.querySelector('[data-stat="clean"]'),
-energy: document.querySelector('[data-stat="energy"]')
+fullness: document.querySelector('[data-stat=\"fullness\"]'),
+happiness: document.querySelector('[data-stat=\"happiness\"]'),
+clean: document.querySelector('[data-stat=\"clean\"]'),
+energy: document.querySelector('[data-stat=\"energy\"]')
 };
 const btnFeed = $('btnFeed');
 const btnPlay = $('btnPlay');
@@ -2428,6 +3828,9 @@ overlay.classList.add('show');
 renderedPoops = -1;
 requestAnimationFrame(loop);
 })();
-</script>
-</body>
-</html>
+</script
+>
+</body
+>
+</html
+>

@@ -1,0 +1,9 @@
+﻿<!DOCTYPE html><html lang="ko"><body>
+<script>
+fetch('index.html').then(r=>r.text()).then(t=>{
+  const ok = t.includes('뽀뽀') && t.includes('<script') && t.includes('</html>');
+  document.body.textContent = ok ? 'tama_validate: OK' : 'tama_validate: FAIL';
+  console.log(ok ? 'OK' : 'FAIL', t.length);
+}).catch(e=>{ document.body.textContent = 'FAIL ' + e; });
+</script>
+</body></html>
